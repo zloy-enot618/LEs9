@@ -89,6 +89,5 @@ def add_animal(animal: AddAnimal):
     return new_animal
     
 
-
-
-
+@app.put("/animals/{animal_id}", response_model=Animals)
+def uptade_animal()
