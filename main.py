@@ -90,4 +90,12 @@ def add_animal(animal: AddAnimal):
     
 
 @app.put("/animals/{animal_id}", response_model=Animals)
-def uptade_animal()
+def uptade_animal(animal_id: int, animal: AddAnimal):
+    for saved_animal in animals:
+        if saved_animal["id"] == animal_id:
+            saved_animal["id"] = animal_id
+            saved_animal["name"] = animal.name
+            saved_animal["value"] = animal.value
+            saved_animal["risk"] = animal.risk
+            return saved_animal
+
